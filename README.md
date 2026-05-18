@@ -127,7 +127,7 @@ Open your preferred web browser and navigate to: **[http://127.0.0.1:5000](http:
 ---
 
 ## ✍️ Author
-Developed by **Sahith Sai Pasupuula** as part of the **CodeAlpha Artificial Intelligence Internship** program.
+Developed by **Sahith Sai Pasupula** as part of the **CodeAlpha Artificial Intelligence Internship** program.
 - **Task**: Language Translation Tool
 - **Role**: Full Stack AI Engineer
 

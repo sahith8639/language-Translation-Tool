@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MultiLingo AI - Advanced Neural Translation Suite</title>
-    
+
     <!-- Meta Tags for SEO -->
-    <meta name="description" content="Translate text instantly across dozens of languages with MultiLingo AI. Features professional glassmorphism design, instant neural translation, text-to-speech, voice dictation, and translation history.">
-    <meta name="keywords" content="translator, AI translation, text-to-speech, gTTS, speech synthesis, language translation, glassmorphism, CodeAlpha, Telugu translator, Hindi translator">
+    <meta name="description"
+        content="Translate text instantly across dozens of languages with MultiLingo AI. Features professional glassmorphism design, instant neural translation, text-to-speech, voice dictation, and translation history.">
+    <meta name="keywords"
+        content="translator, AI translation, text-to-speech, gTTS, speech synthesis, language translation, glassmorphism, CodeAlpha, Telugu translator, Hindi translator">
     <meta name="author" content="CodeAlpha Intern">
-    
+
     <!-- Google Fonts (Poppins & Orbitron for sleek futuristic accents) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS Link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <!-- Ambient Background Blobs for Premium Aesthetic -->
     <div class="blob blob-purple"></div>
@@ -46,7 +52,8 @@
             <div class="translator-panel" id="source-panel">
                 <div class="panel-header">
                     <div class="selector-wrapper">
-                        <label for="src-lang-select"><i class="fa-solid fa-earth-americas icon-decor"></i> Source</label>
+                        <label for="src-lang-select"><i class="fa-solid fa-earth-americas icon-decor"></i>
+                            Source</label>
                         <select id="src-lang-select" class="lang-select">
                             <option value="auto" selected>Auto Detect</option>
                             <option value="en">English</option>
@@ -72,16 +79,20 @@
                             <option value="ar">Arabic</option>
                         </select>
                     </div>
-                    <button class="icon-btn clear-btn" id="clear-text-btn" title="Clear text" aria-label="Clear source text">
+                    <button class="icon-btn clear-btn" id="clear-text-btn" title="Clear text"
+                        aria-label="Clear source text">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                
+
                 <div class="textarea-container">
-                    <textarea id="source-text" placeholder="Enter or paste text to translate... (e.g., Hello, how are you today?)" maxlength="5000" required></textarea>
-                    
+                    <textarea id="source-text"
+                        placeholder="Enter or paste text to translate... (e.g., Hello, how are you today?)"
+                        maxlength="5000" required></textarea>
+
                     <!-- Voice Dictation Overlay Button -->
-                    <button class="voice-input-btn" id="voice-input-btn" title="Voice Input (Speech to Text)" aria-label="Start voice input">
+                    <button class="voice-input-btn" id="voice-input-btn" title="Voice Input (Speech to Text)"
+                        aria-label="Start voice input">
                         <i class="fa-solid fa-microphone"></i>
                     </button>
                 </div>
@@ -91,14 +102,16 @@
                         <span id="char-count">0</span> / <span class="max-chars">5000</span>
                     </div>
                     <div class="detected-badge-container">
-                        <span class="detected-badge hidden" id="detected-badge">Detected: <span id="detected-lang-name">English</span></span>
+                        <span class="detected-badge hidden" id="detected-badge">Detected: <span
+                                id="detected-lang-name">English</span></span>
                     </div>
                 </div>
             </div>
 
             <!-- Swap Column Separator Button -->
             <div class="swap-divider">
-                <button class="swap-btn" id="swap-lang-btn" title="Swap languages (Ctrl+S)" aria-label="Swap source and target languages">
+                <button class="swap-btn" id="swap-lang-btn" title="Swap languages (Ctrl+S)"
+                    aria-label="Swap source and target languages">
                     <i class="fa-solid fa-right-left swap-icon"></i>
                 </button>
             </div>
@@ -136,8 +149,9 @@
 
                 <div class="textarea-container">
                     <!-- Target translation display -->
-                    <textarea id="target-text" placeholder="Translation will appear here instantly..." readonly></textarea>
-                    
+                    <textarea id="target-text" placeholder="Translation will appear here instantly..."
+                        readonly></textarea>
+
                     <!-- Inner Neural Progress Bar when loading -->
                     <div class="translate-loader-container" id="translate-loader">
                         <div class="loader-scanner"></div>
@@ -180,12 +194,13 @@
                     <i class="fa-solid fa-trash-can"></i> Clear History
                 </button>
             </div>
-            
+
             <div class="history-list-wrapper">
                 <div class="empty-history" id="empty-history-msg">
                     <div class="empty-icon"><i class="fa-solid fa-layer-group"></i></div>
                     <p>No recent translations yet.</p>
-                    <p class="empty-sub">Your successful translations are automatically cached locally for offline retrieval.</p>
+                    <p class="empty-sub">Your successful translations are automatically cached locally for offline
+                        retrieval.</p>
                 </div>
                 <div class="history-list hidden" id="history-items-container">
                     <!-- History items will be injected dynamically via JS -->
@@ -196,18 +211,24 @@
         <!-- Footer Credits -->
         <footer class="app-footer">
             <p>Language Translation Tool</p>
+            <p>
+            <h3>Contact Me:</h3>
+            </p>
             <div class="social-links">
-                <a href="https://www.instagram.com/sahith_pasupula/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Instagram">
+                <a href="https://www.instagram.com/sahith_pasupula/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" title="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/sahith-pasupula-332b3133b" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/sahith-pasupula-332b3133b" target="_blank"
+                    rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/sahith8639" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="GitHub">
+                <a href="https://github.com/sahith8639" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
-            <p class="credits-sub">Developed by Sahith Sai Pasupuula | Powered by Flask, googletrans Neural API, and gTTS.</p>
+            <p class="credits-sub">Developed by Sahith Sai Pasupula </p>
         </footer>
     </div>
 
@@ -217,4 +238,5 @@
     <!-- Custom Script Link -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>
